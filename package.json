@@ -1,0 +1,24 @@
+{
+  "name": "playwright-pact-xray",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright (TypeScript) UI + API tests, a Pact consumer contract test, GitHub Actions CI and Xray reporting.",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --project=ui",
+    "test:api": "playwright test --project=api",
+    "test:contract": "playwright test --project=contract",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report reports/html",
+    "xray:import": "bash scripts/xray-import.sh reports/junit.xml"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@pact-foundation/pact": "^17.1.4",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
+  }
+}
